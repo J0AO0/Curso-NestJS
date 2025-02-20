@@ -2,12 +2,12 @@ import { Controller, Get } from '@nestjs/common';
 
 @Controller('recados')
 export class RecadosController {
-    @Get('recados')
+    @Get()
     findAll() : string {
         return 'Essa rota retorna todos os recados';
     }
 
-    @Get('recados/:id')
+    @Get(':id')
     findOne() : string {
         return 'Essa rota retorna um recado';
     }
