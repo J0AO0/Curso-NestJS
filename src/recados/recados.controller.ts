@@ -1,19 +1,46 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  Patch,
+  Post,
+  Query,
+} from '@nestjs/common';
+import { RecadosService } from './recados.service';
 
 @Controller('recados')
 export class RecadosController {
-    @Get()
-    findAll() {
-        return 'Essa rota retorna todos os recados';
-    }
+    constructor(private readonly recadosService: RecadosService){}
 
-    @Get(':id')
-    findOne(@Param('id') id: string) {
-        return `Essa rota retorna o recado ID: ${id}`;
-    }
+  @HttpCode(HttpStatus.OK)
+  @Get()
+  findAll(@Query() pagination: any) {
+    const { limit = 10, offset = 0 } = pagination;
+    // return `Essa rota retorna todos os recados Limit=${limit}, Offset=${offset}`;
+    return this.recadosService.findAll();
+  }
 
-    @Post()
-    create(@Body() body: any) {
-        return body;
-    }
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.recadosService.findOne(id);
+  }
+
+  @Post()
+  create(@Body() body: any) {
+    return this.recadosService.create(body);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() body: any) {
+    this.recadosService.update(id, body);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.recadosService.remove(id);
+  }
 }

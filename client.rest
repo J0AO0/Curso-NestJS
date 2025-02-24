@@ -8,16 +8,36 @@
 GET {{baseUrl}}/home/hello
 
 # RECADOS
-###
+### LISTA TODOS OS RECADOS
 GET {{baseUrl}}/recados
-###
+?limit=200
+&offset=300
+### LISTA APENAS UM RECADO
 GET {{baseUrl}}/recados/1
-###
+### CRIA UM NOVO RECADO
 POST {{baseUrl}}/recados
 Content-Type: application/json
 
-{
-    "recado": "Este é o recado que estou enviando.",
-    "nova chave": "outro valor"
-}
+  {
+    "texto": "Novo recado",
+    "de": "Joana",
+    "para": "João",
+    "lido": false,
+    "data": "2025-02-24T13:49:56.124Z"
+  }
+
+### ATUALIZA UM RECADO
+PATCH {{baseUrl}}/recados/2
+Content-Type: application/json
+
+  {
+    "texto": "Este é um recado de teste",
+    "de": "Marcos",
+    "para": "João",
+    "lido": false,
+    "data": "2025-02-24T13:49:56.124Z"
+  }
+
+### DELETA UM RECADO
+DELETE {{baseUrl}}/recados/2
 
