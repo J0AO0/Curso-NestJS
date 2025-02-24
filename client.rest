@@ -13,7 +13,7 @@ GET {{baseUrl}}/recados
 ?limit=200
 &offset=300
 ### LISTA APENAS UM RECADO
-GET {{baseUrl}}/recados/1
+GET {{baseUrl}}/recados/2
 ### CRIA UM NOVO RECADO
 POST {{baseUrl}}/recados
 Content-Type: application/json
