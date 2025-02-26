@@ -17,7 +17,7 @@ import { UpdateRecadoDto } from './dto/update-recado.dto';
 
 @Controller('recados')
 export class RecadosController {
-    constructor(private readonly recadosService: RecadosService){}
+  constructor(private readonly recadosService: RecadosService) {}
 
   @HttpCode(HttpStatus.OK)
   @Get()
