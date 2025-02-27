@@ -25,13 +25,49 @@ Content-Type: application/json
   }
 
 ### ATUALIZA UM RECADO
-PATCH {{baseUrl}}/recados/2
+PATCH {{baseUrl}}/recados/5
 Content-Type: application/json
 
   {
-    "texto": "Este é um recado de teste"
+    "texto": "Este é um recado de teste 1",
+    "lido": true
   }
 
 ### DELETA UM RECADO
 DELETE {{baseUrl}}/recados/2
 
+
+
+
+/// 
+
+
+
+# PESSOAS
+### LISTA TODOS OS PESSOAS
+GET {{baseUrl}}/pessoas
+?limit=200
+&offset=300
+### LISTA APENAS UM PESSOA
+GET {{baseUrl}}/pessoas/2
+### CRIA UM NOVO PESSOA
+POST {{baseUrl}}/pessoas
+Content-Type: application/json
+
+  {
+    "nome": "João",
+    "email": "joao@email.com",
+    "password": "123456"
+  }
+
+### ATUALIZA UM PESSOA
+PATCH {{baseUrl}}/pessoas/5
+Content-Type: application/json
+
+  {
+    "texto": "Este é um recado de teste 1",
+    "lido": true
+  }
+
+### DELETA UM PESSOA
+DELETE {{baseUrl}}/pessoas/2
