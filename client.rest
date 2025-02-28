@@ -61,12 +61,12 @@ Content-Type: application/json
   }
 
 ### ATUALIZA UM PESSOA
-PATCH {{baseUrl}}/pessoas/5
+PATCH {{baseUrl}}/pessoas/1
 Content-Type: application/json
 
   {
-    "texto": "Este é um recado de teste 1",
-    "lido": true
+    "password": "654321",
+    "nome": "Gustavo"
   }
 
 ### DELETA UM PESSOA
