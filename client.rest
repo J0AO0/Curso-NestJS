@@ -10,8 +10,8 @@ GET {{baseUrl}}/home/hello
 # RECADOS
 ### LISTA TODOS OS RECADOS
 GET {{baseUrl}}/recados
-?limit=200
-&offset=300
+?limit=2
+&offset=0
 ### LISTA APENAS UM RECADO
 GET {{baseUrl}}/recados/6
 ### CRIA UM NOVO RECADO
@@ -29,7 +29,7 @@ PATCH {{baseUrl}}/recados/5
 Content-Type: application/json
 
   {
-    "texto": "Este é um recado de teste 1",
+    "texto": "bla bla",
     "lido": true
   }
 
@@ -70,4 +70,4 @@ Content-Type: application/json
   }
 
 ### DELETA UM PESSOA
-DELETE {{baseUrl}}/pessoas/2
+DELETE {{baseUrl}}/pessoas/4
