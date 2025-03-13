@@ -13,7 +13,7 @@ GET {{baseUrl}}/recados
 ?limit=2
 &offset=0
 ### LISTA APENAS UM RECADO
-GET {{baseUrl}}/recados/6
+GET {{baseUrl}}/recados/5
 ### CRIA UM NOVO RECADO
 POST {{baseUrl}}/recados
 Content-Type: application/json
@@ -21,7 +21,7 @@ Content-Type: application/json
   {
     "texto": "olá, tudo bem ?",
     "deId": 1,
-    "paraId": 4
+    "paraId": 5
   }
 
 ### ATUALIZA UM RECADO
@@ -49,7 +49,7 @@ GET {{baseUrl}}/pessoas
 ?limit=200
 &offset=300
 ### LISTA APENAS UM PESSOA
-GET {{baseUrl}}/pessoas/2
+GET {{baseUrl}}/pessoas/5
 ### CRIA UM NOVO PESSOA
 POST {{baseUrl}}/pessoas
 Content-Type: application/json
